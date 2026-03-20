@@ -4,7 +4,7 @@ import sys
 
 
 def send_telegram(text):
-    # Звертаємось до змінних через назву файлу (config)
+    
     token = config.BOT_TOKEN
     chat_id = config.CHAT_ID
     
@@ -16,7 +16,6 @@ def send_telegram(text):
     
     try:
         response = requests.post(url, json=payload)
-        # Перевірка, чи запит успішний
         if response.status_code == 200:
             print("Повідомлення надіслано!")
         else:
@@ -25,6 +24,6 @@ def send_telegram(text):
         print(f"Помилка мережі: {e}")
 
 if __name__ == "__main__":
-    # Якщо ви запускаєте файл через термінал: python3 send_tg.py "Привіт"
+    # if you want write on konsole: python3 send_tg.py
     message = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else "Тестове повідомлення"
     send_telegram(message)
