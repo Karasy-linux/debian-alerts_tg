@@ -19,6 +19,7 @@ def send_telegram(text,max_matries=3):
             response = requests.post(url, json=payload)
             if response.status_code == 200:
                 print("Message sent!")
+                return True
             else:
                 print(f"Telegram error: {response.text}")
         except Exception as e:
