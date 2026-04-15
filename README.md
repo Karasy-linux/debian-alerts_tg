@@ -1,4 +1,4 @@
-Debian Telegram Notifier
+Telegram Notifier
 
 A lightweight Python-based utility designed to send instant notifications to a Telegram chat. This tool is particularly useful for Linux users who want to receive alerts when long-running terminal processes (like system updates or script executions) are completed.
 🚀 Features
