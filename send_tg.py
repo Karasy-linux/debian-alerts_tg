@@ -1,9 +1,10 @@
 import config
 import requests
 import sys
+import time
 
 
-def send_telegram(text):
+def send_telegram(text,max_matries=3):
     
     token = config.BOT_TOKEN
     chat_id = config.CHAT_ID
@@ -13,15 +14,16 @@ def send_telegram(text):
         "chat_id": chat_id, 
         "text": text
     }
-    
-    try:
-        response = requests.post(url, json=payload)
-        if response.status_code == 200:
-            print("Message sent!")
-        else:
-            print(f"Telegram error: {response.text}")
-    except Exception as e:
-        print(f"network error: {e}")
+    for i in range(max_matries):
+        try:
+            response = requests.post(url, json=payload)
+            if response.status_code == 200:
+                print("Message sent!")
+            else:
+                print(f"Telegram error: {response.text}")
+        except Exception as e:
+            print(f"network error: {e}/n please wait 5 sec")
+            time.sleep(5)
 
 if __name__ == "__main__":
     # if you want write on konsole: python3 send_tg.py
