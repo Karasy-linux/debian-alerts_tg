@@ -16,7 +16,7 @@ A lightweight Python-based utility designed to send instant notifications to a T
     Clone the repository:
     Bash
 
-git clone git@github.com:FAnterrr/debian-alerts_tg.git
+git clone git@github.com:Karasy-linux/debian-alerts_tg.git
 cd debian-alerts_tg
 
 Set up a virtual environment:
